@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { sql } from '@vercel/postgres';
 import type { User } from '@/app/lib/definitions';
 import bcrypt from 'bcrypt';
-import GitHubProvider from 'next-auth/providers/github'
+
 
 
 
@@ -40,8 +40,5 @@ export const { auth, signIn, signOut } = NextAuth({
               return null;
         },
       }),
-    GitHubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
-    }),],
+   ],
 });
